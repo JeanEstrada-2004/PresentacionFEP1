@@ -5,13 +5,13 @@ import { SectionTitle } from '../components/SectionTitle'
 import { presentationData } from '../data/presentationData'
 
 export function CoverSlide() {
-  const { cover, meta } = presentationData
+  const { cover } = presentationData
 
   return (
     <SlideContainer id={cover.id} accent="steel" className="overflow-hidden">
-      <div className="absolute inset-y-0 right-0 hidden w-[32rem] bg-[radial-gradient(circle_at_center,rgba(103,232,249,0.12),transparent_58%)] lg:block" />
-      <div className="relative grid flex-1 gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-        <div className="space-y-8">
+      <div className="absolute inset-y-0 right-0 hidden w-[28rem] bg-[radial-gradient(circle_at_center,rgba(103,232,249,0.12),transparent_58%)] lg:block" />
+      <div className="relative grid flex-1 gap-8 xl:grid-cols-[1.18fr_0.82fr] xl:items-end">
+        <div className="space-y-7">
           <SectionTitle
             eyebrow={cover.group}
             title={cover.title}
@@ -29,7 +29,7 @@ export function CoverSlide() {
             ))}
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-3">
             {cover.pillars.map((pillar, index) => (
               <motion.article
                 key={pillar}
@@ -37,12 +37,12 @@ export function CoverSlide() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.5 }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="rounded-3xl border border-white/10 bg-white/[0.04] p-5"
+                className="rounded-3xl border border-white/10 bg-white/[0.04] p-4 sm:p-5"
               >
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
                   Eje 0{index + 1}
                 </p>
-                <p className="mt-4 text-sm leading-7 text-slate-200">{pillar}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-200">{pillar}</p>
               </motion.article>
             ))}
           </div>
@@ -53,18 +53,18 @@ export function CoverSlide() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.4 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-[linear-gradient(180deg,rgba(13,19,28,0.92),rgba(6,10,15,0.94))] p-7"
+          className="relative overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-[linear-gradient(180deg,rgba(13,19,28,0.92),rgba(6,10,15,0.94))] p-6 sm:p-7"
         >
           <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">
-            {meta.phase}
+            Primer entregable
           </p>
-          <div className="mt-8 space-y-6">
+          <div className="mt-7 space-y-5">
             <div>
               <p className="text-sm uppercase tracking-[0.18em] text-slate-500">
                 Entregable
               </p>
-              <p className="mt-2 font-heading text-3xl text-white">
+              <p className="mt-2 font-heading text-[1.8rem] leading-tight text-white sm:text-3xl">
                 Primer entregable
               </p>
             </div>
@@ -72,7 +72,7 @@ export function CoverSlide() {
               <p className="text-sm uppercase tracking-[0.18em] text-slate-500">
                 Enfoque
               </p>
-              <p className="mt-2 text-lg leading-8 text-slate-200">
+              <p className="mt-2 text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">
                 Evaluación de una alternativa industrial para transformar mineral
                 de hierro en un concentrado apto para la industria del acero.
               </p>

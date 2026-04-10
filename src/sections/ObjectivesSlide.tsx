@@ -19,7 +19,7 @@ export function ObjectivesSlide() {
             {objectives.ends.map((end) => (
               <article
                 key={end}
-                className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 text-center text-sm leading-7 text-slate-200"
+                className="rounded-3xl border border-white/10 bg-white/[0.04] p-4 text-center text-sm leading-6 text-slate-200 sm:p-5 sm:leading-7"
               >
                 {end}
               </article>
@@ -28,30 +28,30 @@ export function ObjectivesSlide() {
 
           <div className="mx-auto h-10 w-px bg-gradient-to-b from-white/0 via-cyan-300/40 to-white/0" />
 
-          <article className="mx-auto max-w-4xl rounded-[2rem] border border-cyan-300/25 bg-cyan-300/10 px-6 py-7 text-center shadow-[0_18px_60px_rgba(103,232,249,0.12)]">
+          <article className="mx-auto max-w-4xl rounded-[2rem] border border-cyan-300/25 bg-cyan-300/10 px-5 py-6 text-center shadow-[0_18px_60px_rgba(103,232,249,0.12)] sm:px-6 sm:py-7">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
               Objetivo central
             </p>
-            <p className="mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl">
+            <p className="mt-4 font-heading text-[1.9rem] leading-tight text-white sm:text-4xl">
               {objectives.core}
             </p>
           </article>
 
           <div className="mx-auto h-10 w-px bg-gradient-to-b from-white/0 via-cyan-300/40 to-white/0" />
 
-          <div className="grid gap-5 xl:grid-cols-[1.15fr_0.85fr]">
+          <div className="grid gap-5 xl:grid-cols-[1.12fr_0.88fr]">
             <div className="grid gap-4 md:grid-cols-2">
               {objectives.means.map((mean) => (
                 <article
                   key={mean}
-                  className="rounded-3xl border border-white/10 bg-slate-950/45 p-5 text-sm leading-7 text-slate-300"
+                  className="rounded-3xl border border-white/10 bg-slate-950/45 p-4 text-sm leading-6 text-slate-300 sm:p-5 sm:leading-7"
                 >
                   {mean}
                 </article>
               ))}
             </div>
 
-            <aside className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
+            <aside className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
                 Medios que exceden el alcance
               </p>
@@ -59,7 +59,7 @@ export function ObjectivesSlide() {
                 {objectives.outOfScope.map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-dashed border-white/12 bg-slate-950/35 px-4 py-4 text-sm leading-7 text-slate-400"
+                    className="rounded-2xl border border-dashed border-white/12 bg-slate-950/35 px-4 py-4 text-sm leading-6 text-slate-400 sm:leading-7"
                   >
                     {item}
                   </div>
