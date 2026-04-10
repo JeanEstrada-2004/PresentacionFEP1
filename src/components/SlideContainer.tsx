@@ -34,8 +34,10 @@ export function SlideContainer({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className={`relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(14,18,23,0.96),rgba(7,10,14,0.92))] px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12 ${className}`}
+        className={`relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(17,22,29,0.97),rgba(7,10,14,0.94))] px-6 py-8 shadow-[0_50px_120px_rgba(0,0,0,0.28)] sm:px-8 sm:py-10 lg:px-12 lg:py-12 ${className}`}
       >
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-48 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_62%)]" />
         {children}
       </motion.div>
     </section>

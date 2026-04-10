@@ -13,43 +13,60 @@ export function ObjectivesSlide() {
           title={objectives.title}
           description={objectives.description}
         />
-        <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr_1fr]">
-          <article className="rounded-3xl border border-white/10 bg-white/[0.04] p-6">
-            <h3 className="font-heading text-2xl text-white">Medios</h3>
-            <div className="mt-5 space-y-4">
-              {objectives.means.map((item) => (
-                <p
-                  key={item}
-                  className="rounded-2xl border border-white/8 bg-slate-950/40 px-4 py-4 text-sm leading-7 text-slate-300"
+
+        <div className="relative mx-auto w-full max-w-6xl">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {objectives.ends.map((end) => (
+              <article
+                key={end}
+                className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 text-center text-sm leading-7 text-slate-200"
+              >
+                {end}
+              </article>
+            ))}
+          </div>
+
+          <div className="mx-auto h-10 w-px bg-gradient-to-b from-white/0 via-cyan-300/40 to-white/0" />
+
+          <article className="mx-auto max-w-4xl rounded-[2rem] border border-cyan-300/25 bg-cyan-300/10 px-6 py-7 text-center shadow-[0_18px_60px_rgba(103,232,249,0.12)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
+              Objetivo central
+            </p>
+            <p className="mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl">
+              {objectives.core}
+            </p>
+          </article>
+
+          <div className="mx-auto h-10 w-px bg-gradient-to-b from-white/0 via-cyan-300/40 to-white/0" />
+
+          <div className="grid gap-5 xl:grid-cols-[1.15fr_0.85fr]">
+            <div className="grid gap-4 md:grid-cols-2">
+              {objectives.means.map((mean) => (
+                <article
+                  key={mean}
+                  className="rounded-3xl border border-white/10 bg-slate-950/45 p-5 text-sm leading-7 text-slate-300"
                 >
-                  {item}
-                </p>
+                  {mean}
+                </article>
               ))}
             </div>
-          </article>
-          <article className="flex items-center rounded-3xl border border-cyan-300/20 bg-cyan-300/8 p-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
-                Objetivo central
+
+            <aside className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
+                Medios que exceden el alcance
               </p>
-              <p className="mt-4 font-heading text-3xl text-white">
-                {objectives.core}
-              </p>
-            </div>
-          </article>
-          <article className="rounded-3xl border border-white/10 bg-white/[0.04] p-6">
-            <h3 className="font-heading text-2xl text-white">Fines</h3>
-            <div className="mt-5 space-y-4">
-              {objectives.ends.map((item) => (
-                <p
-                  key={item}
-                  className="rounded-2xl border border-white/8 bg-slate-950/40 px-4 py-4 text-sm leading-7 text-slate-300"
-                >
-                  {item}
-                </p>
-              ))}
-            </div>
-          </article>
+              <div className="mt-5 space-y-4">
+                {objectives.outOfScope.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-dashed border-white/12 bg-slate-950/35 px-4 py-4 text-sm leading-7 text-slate-400"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
     </SlideContainer>

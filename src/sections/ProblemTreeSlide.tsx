@@ -13,43 +13,42 @@ export function ProblemTreeSlide() {
           title={problemTree.title}
           description={problemTree.description}
         />
-        <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr_1fr]">
-          <article className="rounded-3xl border border-white/10 bg-white/[0.04] p-6">
-            <h3 className="font-heading text-2xl text-white">Causas</h3>
-            <div className="mt-5 space-y-4">
-              {problemTree.causes.map((item) => (
-                <p
-                  key={item}
-                  className="rounded-2xl border border-white/8 bg-slate-950/40 px-4 py-4 text-sm leading-7 text-slate-300"
-                >
-                  {item}
-                </p>
-              ))}
-            </div>
+
+        <div className="relative mx-auto w-full max-w-6xl">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {problemTree.effects.map((effect) => (
+              <article
+                key={effect}
+                className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 text-center text-sm leading-7 text-slate-200"
+              >
+                {effect}
+              </article>
+            ))}
+          </div>
+
+          <div className="mx-auto h-10 w-px bg-gradient-to-b from-white/0 via-amber-300/40 to-white/0" />
+
+          <article className="mx-auto max-w-4xl rounded-[2rem] border border-amber-300/25 bg-amber-300/10 px-6 py-7 text-center shadow-[0_18px_60px_rgba(245,158,11,0.12)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-200">
+              Problema central
+            </p>
+            <p className="mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl">
+              {problemTree.core}
+            </p>
           </article>
-          <article className="flex items-center rounded-3xl border border-amber-300/20 bg-amber-300/8 p-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-200">
-                Problema central
-              </p>
-              <p className="mt-4 font-heading text-3xl text-white">
-                {problemTree.core}
-              </p>
-            </div>
-          </article>
-          <article className="rounded-3xl border border-white/10 bg-white/[0.04] p-6">
-            <h3 className="font-heading text-2xl text-white">Efectos</h3>
-            <div className="mt-5 space-y-4">
-              {problemTree.effects.map((item) => (
-                <p
-                  key={item}
-                  className="rounded-2xl border border-white/8 bg-slate-950/40 px-4 py-4 text-sm leading-7 text-slate-300"
-                >
-                  {item}
-                </p>
-              ))}
-            </div>
-          </article>
+
+          <div className="mx-auto h-10 w-px bg-gradient-to-b from-white/0 via-amber-300/40 to-white/0" />
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {problemTree.causes.map((cause) => (
+              <article
+                key={cause}
+                className="rounded-3xl border border-white/10 bg-slate-950/45 p-5 text-sm leading-7 text-slate-300"
+              >
+                {cause}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </SlideContainer>
